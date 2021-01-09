@@ -20,19 +20,19 @@ app.use('/api', require('./controllers'));
 
 // for production use, we serve the static react build folder
 if(process.env.NODE_ENV==='production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+    app.use(express.static(path.join(__dirname, '../client/build')));
 
-  // all unknown routes should be handed to our react app
-  app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-  });
-
-  // connect the database in production
-  mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
+    // all unknown routes should be handed to our react app
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    });
 }
 
-// connect database in development
-mongoose.connect("mongodb://localhost:27017/athletesChallenge", {useNewUrlParser: true, useUnifiedTopology: true})
+// connecting either to production db or development db
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/athletesChallenge", 
+    {useNewUrlParser: true, useUnifiedTopology: true}
+);
 
 // database debugging
 const debug = mongoose.connection;
