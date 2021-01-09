@@ -39,6 +39,6 @@ const debug = mongoose.connection;
 debug.on("error", console.error.bind(console, "[ERROR] Connection error: "));
 debug.once("open", () => {
     console.log("[CONNECTED] Database connected...")
-})
+});
 
 app.listen(PORT, () => console.log(`[LISTENING] Port #${PORT}`));
