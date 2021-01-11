@@ -19,6 +19,15 @@ class List extends React.Component{
     
     render(){
 
+        if(!this.state.athletes){
+            return(
+                <div className="containerAthleteInfo">
+                    <h1 className="text-light m-5">Athlete List</h1>
+                    <p>The list is currenlty empty</p>
+                </div>
+            );
+        }
+
         let athletesComponents = [];
         this.state.athletes.forEach((athlete, idx) => {
             athletesComponents.push(<AthleteInfo athlete={athlete} key={idx}/>);
