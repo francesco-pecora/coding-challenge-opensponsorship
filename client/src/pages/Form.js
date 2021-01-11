@@ -35,7 +35,7 @@ class Form extends React.Component{
             await fetch("/api/athlete", postRequestConfig);
             this.setState({ formSubmitted: true })
         } catch (err) {
-            console.err(err);
+            alert(`[ERROR] Error occurred while posting an athlete \n${err}`)
         }
     };
 

@@ -21,7 +21,7 @@ class App extends React.Component {
           <div className="row justify-content-center">
             <Switch>
               <Route path="/athletes" component={List} />
-              <Route path="/athletes/:id" component={Profile} />
+              <Route path="/profile/:id" component={Profile} />
               <Route path="/new-athlete" component={Form} />
               <Route path="/" component={List} />
             </Switch>
