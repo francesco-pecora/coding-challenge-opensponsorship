@@ -17,6 +17,11 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
     try {
+        // changing structure of sports to have array
+        // of strings instead of array of objects
+        req.body.sports.forEach((sport, idx) => {
+            req.body.sports[idx] = sport.sport;
+        });
         let newAthlete = await db.Athlete.create(req.body);
         res.send(newAthlete);
     }

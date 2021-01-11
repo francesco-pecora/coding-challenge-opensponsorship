@@ -2,6 +2,7 @@ import React from "react";
 import BasicInfo from "./formSections/BasicInfo";
 import About from "./formSections/About";
 import Summary from "./formSections/Summary";
+import { Redirect } from 'react-router-dom';
 
 class Form extends React.Component{
 
@@ -13,18 +14,37 @@ class Form extends React.Component{
         description: "",
         location: "",
         team: "",
+        formSubmitted: false,
     };
 
     setAthleteInfo = (info) => {
         this.setState(info);
     };
 
-    createNewAthlete = (event) => {
+    createNewAthlete = async (event) => {
         event.preventDefault();
-        console.log(this.state);
+        
+        let postRequestConfig = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(this.state),
+        };
+        try {
+            await fetch("/api/athlete", postRequestConfig);
+            this.setState({ formSubmitted: true })
+        } catch (err) {
+            console.err(err);
+        }
     };
 
     render(){
+
+        if (this.state.formSubmitted) {
+            return <Redirect to={"/athletes"} />;
+        }
+
         return(
             <div className="formContainer">
                 <div className="form">

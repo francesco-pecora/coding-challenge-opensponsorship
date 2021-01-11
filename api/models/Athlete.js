@@ -9,8 +9,7 @@ const Athlete = mongoose.model(
         gender: String,
         team: String,
         sports: [String],
-        about: String,
-        interests: String,
+        description: String,
         image: String
     })
 );
