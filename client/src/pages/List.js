@@ -21,12 +21,12 @@ class List extends React.Component{
 
         let athletesComponents = [];
         this.state.athletes.forEach((athlete, idx) => {
-            console.log(athlete)
-            athletesComponents.push(<AthleteInfo id={athlete._id} name={athlete.name} gender={athlete.gender} key={idx}/>);
+            athletesComponents.push(<AthleteInfo athlete={athlete} key={idx}/>);
         });
 
         return(
             <div className="containerAthleteInfo">
+                <h1 className="text-light m-5">Athlete List</h1>
                 { athletesComponents }
             </div>
         );

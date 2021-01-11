@@ -15,15 +15,38 @@ class Summary extends React.Component{
 
         return(
             <div>
-                <h4>Summary</h4>
+                <h3>Summary</h3>
                 <div>
-                    <p>Name: { name }</p>
-                    <p>Sports: { sports.map(sport => sport.sport + ", ") }</p>
-                    <p>Gender: { gender }</p>
-                    <p>Date of Birth: { birthDate }</p>
-                    <p>Description: { description }</p>
-                    <p>Location: { location }</p>
-                    <p>Team: { team }</p>
+                    <ul className="list-group">
+                        <li className="list-group-item">
+                            <h5 className="float-left">Name: </h5>
+                            <p className="float-right">{ name }</p>
+                        </li>
+                        <li className="list-group-item">
+                            <h5 className="float-left">Sports: </h5>
+                            <p className="float-right">{ sports.map(sport => sport.sport + ", ") }</p>
+                        </li>
+                        <li className="list-group-item">
+                            <h5 className="float-left">Gender: </h5>
+                            <p className="float-right">{ gender }</p>
+                        </li>
+                        <li className="list-group-item">
+                            <h5 className="float-left">Date of Birth: </h5>
+                            <p className="float-right">{ birthDate.slice(0, 10) }</p>
+                        </li>
+                        <li className="list-group-item breakWords">
+                            <h5 className="float-left">Description: </h5>
+                            <p className="float-right">{ description }</p>
+                        </li>
+                        <li className="list-group-item">
+                            <h5 className="float-left">Location: </h5>
+                            <p className="float-right">{ location }</p>
+                        </li>
+                        <li className="list-group-item">
+                            <h5 className="float-left">Team: </h5>
+                            <p className="float-right">{ team }</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         );

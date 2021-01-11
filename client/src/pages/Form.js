@@ -46,7 +46,8 @@ class Form extends React.Component{
         }
 
         return(
-            <div className="formContainer">
+            <form className="formContainer" onSubmit={ this.createNewAthlete.bind(this) }>
+                <h1 className="text-light m-5">New Athlete Form</h1>
                 <div className="form">
                     <BasicInfo  setAthleteInfo={ this.setAthleteInfo.bind(this) }/>
                     <About setAthleteInfo={ this.setAthleteInfo.bind(this) }/>
@@ -54,10 +55,10 @@ class Form extends React.Component{
                 <div className="sticky-top runningSummary sectionContainer">
                     <div className="sticky-top">
                         <Summary athlete={this.state} />
-                        <button className="btn btn-dark" type="button" onClick={ this.createNewAthlete.bind(this) }>Submit</button>
+                        <button className="btn btn-dark" type="submit">Submit</button>
                     </div>
                 </div>
-            </div>
+            </form>
         );
     };
 };

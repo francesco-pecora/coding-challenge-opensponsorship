@@ -10,7 +10,7 @@ const Athlete = mongoose.model(
         team: String,
         sports: [String],
         description: String,
-        image: String
+        imgUrl: String
     })
 );
 

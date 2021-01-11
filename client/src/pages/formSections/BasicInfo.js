@@ -11,7 +11,7 @@ class BasicInfo extends React.Component{
     render(){
         return(
             <div className="sectionContainer">
-                <h4>Basic Info</h4>
+                <h3>Basic Info</h3>
                 <div>
                     <div className="spaceBetweenBlocks">
                         <label>Name</label>
@@ -19,7 +19,7 @@ class BasicInfo extends React.Component{
                                 type="text" 
                                 onChange={(e) => this.props.setAthleteInfo({ name: e.target.value })} 
                                 id="name" 
-                                name="name"></input>
+                                name="name" required/>
                     </div>
 
                     <div className="spaceBetweenBlocks">
@@ -28,6 +28,7 @@ class BasicInfo extends React.Component{
                                         onSelect={(sports) => this.props.setAthleteInfo({ sports: sports })}
                                         onRemove={(sports) => this.props.setAthleteInfo({ sports: sports })}
                                         displayValue="sport"
+                                        required 
                                         />
                     </div>
                     
@@ -38,7 +39,7 @@ class BasicInfo extends React.Component{
                                     className="form-check-input" 
                                     type="radio" 
                                     name="inlineRadioOptions" 
-                                    value="man" />
+                                    value="man" required/>
                             <label className="form-check-label" htmlFor="inlineRadio1">Man</label>
                         </div>
                         <div className="form-check form-check-inline">
@@ -47,7 +48,7 @@ class BasicInfo extends React.Component{
                                     type="radio" 
                                     name="inlineRadioOptions" 
                                     id="inlineRadio2" 
-                                    value="woman" />
+                                    value="woman" required/>
                             <label className="form-check-label" htmlFor="inlineRadio2">Woman</label>
                         </div>
                         <div className="form-check form-check-inline">
@@ -56,7 +57,7 @@ class BasicInfo extends React.Component{
                                     type="radio" 
                                     name="inlineRadioOptions" 
                                     id="inlineRadio3" 
-                                    value="non-binary" />
+                                    value="non-binary" required/>
                             <label className="form-check-label" htmlFor="inlineRadio3">Non Binary</label>
                         </div>
                     </div>
@@ -67,7 +68,9 @@ class BasicInfo extends React.Component{
                                 type="date" 
                                 onChange={(e) => this.props.setAthleteInfo({ birthDate: e.target.value })} 
                                 id="birthDate" 
-                                name="birthDate"></input>
+                                name="birthDate" 
+                                required
+                                />
                     </div>
                 </div>
             </div>
