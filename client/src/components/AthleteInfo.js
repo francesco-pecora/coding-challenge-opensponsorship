@@ -7,7 +7,7 @@ class AthleteInfo extends React.Component {
         return (
             <div className="card m-3 singleAthleteInfo">
                 <div className="card-body">
-                    <img src={imgUrl} className="card-title float-left resizeImageInList" roundedCircle />
+                    <img alt="profile pic" src={imgUrl} className="card-title float-left resizeImageInList" roundedCircle />
                     <Link className="card-title float-left" to={"/profile/" + _id}>
                         <h5>{ name }</h5>
                     </Link>
