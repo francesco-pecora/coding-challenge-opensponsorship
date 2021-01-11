@@ -2,7 +2,7 @@
   "name": "coding-challenge-opensponsorship",
   "version": "1.0.0",
   "description": "coding challenge for opensponsorship interview",
-  "main": "api/app.js",
+  "main": "index.js",
   "scripts": {
     "start": "node api/app.js",
     "dev": "nodemon -r dotenv/config api/app.js",
