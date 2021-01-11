@@ -17,7 +17,7 @@ class App extends React.Component {
     return (
       <Router>
         <Navigation />
-        <div className="container-fluid text-center">
+        <div className="container-fluid text-center backgroundGradient">
           <div className="row justify-content-center">
             <Switch>
               <Route path="/athletes" component={List} />

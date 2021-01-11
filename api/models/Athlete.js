@@ -8,12 +8,7 @@ const Athlete = mongoose.model(
         location: String,
         gender: String,
         team: String,
-        sports: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Sport",
-            }
-        ],
+        sports: [String],
         about: String,
         interests: String,
         image: String

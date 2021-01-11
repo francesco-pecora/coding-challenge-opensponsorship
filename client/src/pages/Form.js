@@ -6,34 +6,38 @@ import Summary from "./formSections/Summary";
 class Form extends React.Component{
 
     state = {
-        basicInfo: {},
-        about: {},
+        name: "",
+        sports: [],
+        gender: "",
+        birthDate: "",
+        description: "",
+        location: "",
+        team: "",
     };
 
-    setBasicInfoData = (basicInfo) => {
-        this.setState({
-            basicInfo: basicInfo
-        });
+    setAthleteInfo = (info) => {
+        this.setState(info);
     };
 
-    setAboutData = (about) => {
-        this.setState({
-            about: about
-        });
-    };
-
-    createNewAthlete = () => {
-        alert("Athlete created!");
+    createNewAthlete = (event) => {
+        event.preventDefault();
+        console.log(this.state);
     };
 
     render(){
         return(
-            <form onSubmit={ this.createNewAthlete.bind(this) }>
-                <BasicInfo  setBasicInfoData={ this.setBasicInfoData.bind(this) }/>
-                <About setAboutData={ this.setAboutData.bind(this) }/>
-                <Summary />
-                <input type="submit" value="Submit" />
-            </form>
+            <div className="formContainer">
+                <div className="form">
+                    <BasicInfo  setAthleteInfo={ this.setAthleteInfo.bind(this) }/>
+                    <About setAthleteInfo={ this.setAthleteInfo.bind(this) }/>
+                </div>
+                <div className="sticky-top runningSummary sectionContainer">
+                    <div className="sticky-top">
+                        <Summary athlete={this.state} />
+                        <button className="btn btn-dark" type="button" onClick={ this.createNewAthlete.bind(this) }>Submit</button>
+                    </div>
+                </div>
+            </div>
         );
     };
 };

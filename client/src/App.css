@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.backgroundGradient {
+  background: linear-gradient(to bottom, #1c1c1c, #4d4d4d, #848484, #c0c0c0, #ffffff);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,73 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.formContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.sectionContainer {
+  width: 70%;
+  margin: 20px;
+  padding: 40px;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 12px 30px 0 rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.formContainer .form {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.formContainer .runningSummary {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  margin-top: 70px;
+  height: 90%;
+}
+
+.spaceBetweenBlocks {
+  margin: 30px;
+}
+
+.navbar {
+  width: 100%;
+  z-index: 2;
+}
+
+.nav {
+  width: 100%;
+}
+
+.nav-link {
+  transition: 1s all;
+  font-size: 18px;
+  color: #fff;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.nav-link:hover{
+  transition: 0.5s all;
+  color: #2f89fc;
+  cursor: pointer;
+}
+
+.active {
+  color: #FFFFFF;
+  border-bottom: 1px solid white;
 }
