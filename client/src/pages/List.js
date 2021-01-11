@@ -23,7 +23,7 @@ class List extends React.Component{
             return(
                 <div className="containerAthleteInfo">
                     <h1 className="text-light m-5">Athlete List</h1>
-                    <p>The list is currenlty empty</p>
+                    <p>The list is currenlty empty. Add a new athlete.</p>
                 </div>
             );
         }
