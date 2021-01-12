@@ -32,13 +32,8 @@ if(process.env.NODE_ENV==='production') {
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost:27017/athletesChallenge", 
     {useNewUrlParser: true, useUnifiedTopology: true}
-);
-
-// database debugging
-const debug = mongoose.connection;
-debug.on("error", console.error.bind(console, "[ERROR] Connection error: "));
-debug.once("open", () => {
-    console.log("[CONNECTED] Database connected...")
-});
+)
+.then(() => console.log( '[CONNECTED] Database connected...' ))
+.catch(err => console.error( err ));
 
 app.listen(PORT, () => console.log(`[LISTENING] Port #${PORT}`));
