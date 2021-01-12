@@ -5,11 +5,11 @@ const db = require('../models');
 router.get("/", async (req, res) => {
     try {
         let athletes = await db.Athlete.find({});
-        res.send(athletes);
+        return res.send(athletes);
     }
     catch(error) {
         // Generic error message for server-side error
-        res.status(500).json({
+        return res.status(500).json({
             error: error.toString(),
         });
     };
@@ -19,11 +19,11 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
     try {
         let athlete = await db.Athlete.findById(req.params.id);
-        res.send(athlete);
+        return res.send(athlete);
     }
     catch(error) {
         // Generic error message for server-side error
-        res.status(500).json({
+        return res.status(500).json({
             error: error.toString(),
         });
     }
@@ -38,11 +38,11 @@ router.post("/", async (req, res) => {
             req.body.sports[idx] = sport.sport;
         });
         let newAthlete = await db.Athlete.create(req.body);
-        res.send(newAthlete);
+        return res.send(newAthlete);
     }
     catch(error) {
         // Generic error message for server-side error
-        res.status(500).json({
+        return res.status(500).json({
             error: error.toString(),
         });
     };
